@@ -1,0 +1,36 @@
+algoritmo "OperacoesCirculoEsfera"
+
+const
+   PI = 3.141592
+
+var
+   codigo: inteiro
+   raio, resultado: real
+
+inicio
+   escreva("Digite o código da operação (1-Perímetro, 2-Área, 3-Volume): ")
+   leia(codigo)
+
+   escreva("Digite o valor do raio: ")
+   leia(raio)
+
+   se (codigo = 1) entao
+      resultado <- 2 * PI * raio
+      escreval("Perímetro do círculo: ", resultado)
+
+   senao
+      se (codigo = 2) entao
+         resultado <- PI * raio * raio
+         escreval("Área do círculo: ", resultado)
+
+      senao
+         se (codigo = 3) entao
+            resultado <- (4.0/3.0) * PI * raio * raio * raio
+            escreval("Volume da esfera: ", resultado)
+
+         senao
+            escreval("Código de operação inválido!")
+         fimse
+      fimse
+   fimse
+fimalgoritmo
