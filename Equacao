@@ -1,0 +1,51 @@
+algoritmo "EquacaoSegundoGrau"
+
+real a, b, c, delta, x1, x2
+
+inicio
+   escreva("Digite o coeficiente a: ")
+   leia(a)
+   escreva("Digite o coeficiente b: ")
+   leia(b)
+   escreva("Digite o coeficiente c: ")
+   leia(c)
+
+   // Caso inválido: a = 0 e b = 0 e c != 0
+   se (a = 0) e (b = 0) e (c <> 0) entao
+      escreval("Coeficientes informados incorretamente.")
+
+   // Caso equação de primeiro grau: a = 0 e b != 0
+   senao
+      se (a = 0) e (b <> 0) entao
+         x1 <- -c / b
+         escreval("Essa é uma equação de primeiro grau.")
+         escreval("Raiz da equação: x = ", x1)
+
+      // Caso equação de segundo grau: a <> 0
+      senao
+         delta <- b*b - 4*a*c
+
+         // Delta negativo: sem raízes reais
+         se (delta < 0) entao
+            escreval("Esta equação não possui raízes reais.")
+
+         // Delta igual a zero: duas raízes iguais
+         senao
+            se (delta = 0) entao
+               x1 <- -b / (2*a)
+               x2 <- x1
+               escreval("Esta equação possui duas raízes reais iguais.")
+               escreval("x1 = x2 = ", x1)
+
+            // Delta maior que zero: duas raízes diferentes
+            senao
+               x1 <- (-b + raiz(delta)) / (2*a)
+               x2 <- (-b - raiz(delta)) / (2*a)
+               escreval("Esta equação possui duas raízes reais diferentes.")
+               escreval("x1 = ", x1)
+               escreval("x2 = ", x2)
+            fimse
+         fimse
+      fimse
+   fimse
+fimalgoritmo
