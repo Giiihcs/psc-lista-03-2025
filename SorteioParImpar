@@ -1,0 +1,32 @@
+algoritmo "SorteioParImpar"
+
+var
+   num1, num2, menor, maior, sorteado: inteiro
+
+inicio
+   escreva("Digite o primeiro número inteiro: ")
+   leia(num1)
+
+   escreva("Digite o segundo número inteiro: ")
+   leia(num2)
+
+   // Determinar menor e maior
+   se (num1 < num2) entao
+      menor <- num1
+      maior <- num2
+   senao
+      menor <- num2
+      maior <- num1
+   fimse
+
+   // Gerar número aleatório entre menor e maior
+   // Fórmula: menor + inteiro(aleatorio() * (maior - menor + 1))
+   sorteado <- menor + inteiro(aleatorio() * (maior - menor + 1))
+
+   // Verificar se é par ou ímpar
+   se (sorteado mod 2 = 0) entao
+      escreval("Número sorteado: ", sorteado, " → Par")
+   senao
+      escreval("Número sorteado: ", sorteado, " → Ímpar")
+   fimse
+fimalgoritmo
