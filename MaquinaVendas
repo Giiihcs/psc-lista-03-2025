@@ -1,0 +1,60 @@
+algoritmo "MaquinaVendas"
+
+inteiro compra, pago, troco, qtd
+
+inicio
+   escreva("Digite o valor da compra: R$ ")
+   leia(compra)
+
+   escreva("Digite o valor pago: R$ ")
+   leia(pago)
+
+   se (pago < compra) entao
+      escreval("Quantia insuficiente para realizar a compra!")
+   senao
+      troco <- pago - compra
+      escreval("Troco a ser devolvido: R$ ", troco)
+
+      // Notas de 50
+      se (troco >= 50) entao
+         qtd <- troco div 50
+         troco <- troco mod 50
+         escreval(qtd, " nota(s) de R$ 50")
+      fimse
+
+      // Notas de 20
+      se (troco >= 20) entao
+         qtd <- troco div 20
+         troco <- troco mod 20
+         escreval(qtd, " nota(s) de R$ 20")
+      fimse
+
+      // Notas de 10
+      se (troco >= 10) entao
+         qtd <- troco div 10
+         troco <- troco mod 10
+         escreval(qtd, " nota(s) de R$ 10")
+      fimse
+
+      // Notas de 5
+      se (troco >= 5) entao
+         qtd <- troco div 5
+         troco <- troco mod 5
+         escreval(qtd, " nota(s) de R$ 5")
+      fimse
+
+      // Notas de 2
+      se (troco >= 2) entao
+         qtd <- troco div 2
+         troco <- troco mod 2
+         escreval(qtd, " nota(s) de R$ 2")
+      fimse
+
+      // Notas de 1
+      se (troco >= 1) entao
+         qtd <- troco div 1
+         troco <- troco mod 1
+         escreval(qtd, " nota(s) de R$ 1")
+      fimse
+   fimse
+fimalgoritmo
